@@ -26,7 +26,7 @@ var CCEElement  = require('./cce');
 var FilterBank  = require('./filter_bank');
 var tables      = require('./tables');
 var FIL = require('./fil');
-var SBR = require('./sbr/sbr');
+var SBR = require('./sbr/sbr.js');
 
 // AAC profiles
 const AOT_AAC_MAIN = 1, // no
