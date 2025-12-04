@@ -1,0 +1,32 @@
+name: Make Browser Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup Node 8
+      uses: actions/setup-node@v4
+      with:
+        node-version: '8.x'
+
+    - name: Install old npm & build tools
+      run: |
+        npm install -g npm@5
+        npm install
+
+    - name: Make browser build
+      run: |
+        make browser
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: browser-build
+        path: build/
