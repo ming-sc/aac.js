@@ -20,6 +20,7 @@ jobs:
       run: |
         npm install -g npm@5
         npm install
+        npm install babel-core@6 babel-preset-es2015@6 babel-plugin-multidimensional-array babelify@7 --save-dev
 
     - name: Make browser build
       run: |
